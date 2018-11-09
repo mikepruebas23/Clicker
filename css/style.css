@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (min-width: 320px) and (max-width: 736px) {
+    .puntos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #00a8ff;
+        color: white;
+        margin-bottom: 15px;
+    }
+    .foto-clicker {
+        display: flex;
+        justify-content: center;
+        background: #00a8ff;
+    }
+    .imagen {
+        width: 50%;
+        height: 50%;
+        border-radius: 50%;
+        margin-top: 25px;
+        margin-bottom: 40px;
+    }
+    .botones {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        padding: 15px;
+        background: #00a8ff;
+        color: white;
+    }
+    .boton {
+        margin: 7px;
+    }
+    .compras {
+        display: flex;
+        background: #0576af;
+    }
+    .inventario {
+        width: 50%;
+        background: #00a8ff;
+        color: #fff;
+    }
+}
