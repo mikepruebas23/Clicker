@@ -1,0 +1,54 @@
+/*SnackBar*/
+
+#NoDinero1 {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  border-radius: -11%;
+  padding: 10px 7px 5px 7px;
+  position: fixed;
+  z-index: 1;
+  left: 19%;
+  bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+#NoDinero1.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+.img-money {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
+  width: 40px;
+  height: 40px;
+}
+
+}
