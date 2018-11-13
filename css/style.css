@@ -3,6 +3,10 @@
 @import url('animacion-ondas.css');
 @import url('notificaciones.css');
 @import url('circulos.css');
+@import url('estilos.css');
+@import url('menu.css');
+@import url('fontello.css');
+
 * {
   margin: 0;
   padding: 0;
