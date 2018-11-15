@@ -1,41 +1,31 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+body{
+  background: #EFF7FE;
 }
-body {
-  background-color: #212138;
-  color: #fff;
+.main-section{
+	border:1px solid #138496;
+	background-color: #fff;
 }
-
-.contenedor-perfil {
-  max-width: 500px;
-  border-radius: 1%;
-  width: 35%;
-  margin: 50px auto;
-  background: #684bff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 50px;
+.profile-header{
+	background-color: #FF530D;
+	height:150px;
 }
-
-.contenedor-img {}
-
-.img-perfil {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+.user-detail{
+	margin:-50px 0px 30px 0px;
 }
-.datos-usuario{
-  width: 100%;
+.user-detail img{
+	height:100px;
+	width:100px;
 }
-.nombreUsuario {
-
-  background: #212138;
+.user-detail h5{
+	margin:15px 0px 5px 0px;
+  font-size: 18px;
 }
-
-/*--------------------------------------*/
+.user-social-detail{
+	padding:15px 0px;
+	background-color: #E82C0C;
+}
+.user-social-detail a i{
+	color:#fff;
+	font-size:23px;
+	padding: 0px 5px;
+}

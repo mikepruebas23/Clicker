@@ -33,3 +33,19 @@ $(document).ready(function() {
   });
 
 });
+
+function actualizar() {
+  var user = firebase.auth().currentUser;
+  var nameUser = document.getElementById("name").value;
+
+  user.updateProfile({
+    displayName: nameUser
+
+  }).then(function() {
+    console.log(nameUser);
+    location.reload();
+
+  }).catch(function(error) {
+
+  });
+}
