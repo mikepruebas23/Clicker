@@ -5,19 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Usuario</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/perfil.css">
+
 </head>
 <body>
-  <section>
-    <div class="perfil">
-      <img src="" alt="" id="foto-perfil" class="foto-perfil">
-      <div class="datos-usuario">
-        <div id="nombreUsuario" class="nombreUsuario"></div>
-        <div class="correoUsuario" id="correoUsuario"></div>
+  <div class="container">
+    <section class="contenedor-perfil">
+      <div class="contenedor-img">
+        <img src="img/yo.jpg" class="img-perfil" alt="foto de perfil">
       </div>
-    </div>
-  </section>
+      <div class="perfil">
+        <img src="" alt="" id="foto-perfil" class="foto-perfil">
+        <div class="datos-usuario">
+          <div id="nombreUsuario" class="nombreUsuario"></div>
+          <div class="correoUsuario" id="correoUsuario"></div>
+          <button class="btn btn-primary" onclick="actualizar()">Actualziar</button>
+        </div>
+      </div>
 
+  </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
 <script src="js/perfilusuario.js"></script>

@@ -1,5 +1,41 @@
-.nombreUsuario{
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+body {
+  background-color: #212138;
+  color: #fff;
+}
+
+.contenedor-perfil {
+  max-width: 500px;
+  border-radius: 1%;
+  width: 35%;
+  margin: 50px auto;
+  background: #684bff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.contenedor-img {}
+
+.img-perfil {
   width: 200px;
   height: 200px;
-  background: red;
+  border-radius: 50%;
 }
+.datos-usuario{
+  width: 100%;
+}
+.nombreUsuario {
+
+  background: #212138;
+}
+
+/*--------------------------------------*/
