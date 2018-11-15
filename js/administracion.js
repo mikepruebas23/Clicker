@@ -10,39 +10,10 @@ var config = {
 
 firebase.initializeApp(config);
 var database = firebase.database();
+
 var referencia=database.ref("productos");
+
 var productos={};
-
-// Chequeamos la autenticación antes de acceder al resto de contenido de este fichero.
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user)
-  {
-    console.log(user);
-    console.log('Usuario: '+user.uid+' está logueado con '+user.providerData[0].providerId);
-    var logueado='<li><p class="navbar-text navbar-center">'+user.email+'</p></li>';
-   logueado+='<li><button type="button" class="btn btn-warning navbar-btn" id="botonLogout">Salir</button></li>';
-
-   $(logueado).appendTo('.nav');
-   $("#botonLogout").click(desconectar);
-
-} else
-{
-    console.log('Usuario no logueado');
-    location.assign('login.html');
-}
-});
-
-function desconectar()
-{
-    firebase.auth().signOut().then(function() {
-       location.assign('index.html');
-   }, function(error)
-   {
-      alert("Error al intentar desconectarse.");
-  });
-
-}
-
 
 /*
 Evento: value
@@ -104,21 +75,3 @@ referencia.on('value',function(datos)
 },function(objetoError){
     console.log('Error de lectura:'+objetoError.code);
 });
-
-
-function editarProducto(id)
-{
-    // Para pasar el ID a otro proceso lo hacemos a través de window.name
-    window.name= id;
-
-    // Cargamos la página editarproducto.html
-    location.assign('editarproducto.html');
-}
-
-function borrarProducto(id)
-{
-    if (confirm("¿Está seguro/a de que quiere borrar este artículo?") == true)
-    {
-        referencia.child(id).remove();
-    }
-}

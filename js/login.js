@@ -13,7 +13,7 @@ firebase.initializeApp(config);
 function exito()
 {
     $("#spinner").html("");
-    location.assign('compras.html');
+    location.assign('perfil.html');
 }
 
 $(function()
