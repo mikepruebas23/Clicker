@@ -4,7 +4,7 @@
 }
 header label
 {
-  float: right;
+  float: left;
   font-size: 28px;
   margin: 6px 0;
   cursor: pointer;
