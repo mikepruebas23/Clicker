@@ -33,31 +33,31 @@
   <!-- Swiper -->
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">
-
-        <div class="numeros">
+      <div class="swiper-slide">  
         <div class="puntos">
             <div>Dinero</div>
             <div id="contador">0</div>
-        </div>
-        <div class="puntos">
-            <div>Youtube</div>
-            <div id="contador2">0</div>
-        </div>
-        <div class="puntos">
-            <div>facebook</div>
-            <div id="contador3">0</div>
-        </div>
         </div>
         <div class="foto-clicker container">
           <img src="img/santaTrap.jpg" class="imagen" onclick="clic();">
           <div id="circulo" class="circulo"></div>
         </div>
         <div class="botones">
-          <button onclick="comprar(0);" class="btn btn1">click $10</button>
+<div onclick="setTimeout('comprar(0)',3000);">
+<img border="0" alt="yo" src="img/yo.jpg" width="50" height="50">
+</div>
+          <!-- <button onclick="comprar(0);" class="btn btn1">click $10</button>
           <button onclick="comprar(1);" class="btn btn1">compra1 $200</button>
           <button onclick="comprar(2);" class="btn btn1">compra2 $400</button>
-          <button class="btn btn1">PROXIMAMENTE</button>
+          <button class="btn btn1">PROXIMAMENTE</button>  -->
+          <div id="myProgress">
+  <div id="myBar"></div>
+</div>
+                <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+      70%
+    </div>
+  </div>
         </div>
         <div class="compras">
           <div id="inventario" class="inventario"></div>
@@ -76,6 +76,8 @@
       <div class="swiper-slide">Slide 9</div>
       <div class="swiper-slide">Slide 10</div>
     </div>
+    <!-- Add Pagination -->
+  <div class="swiper-pagination"></div>
   </div>
 
   <div class="numeros">
@@ -115,6 +117,7 @@
   <script src="js/app.js"></script>
   <script src="js/menu.js"></script>
   <script src="js/swiper.min.js"></script>
+  <script src="js/progressBars.js"></script>
   <script>
       var swiper = new Swiper('.swiper-container');
     </script>
