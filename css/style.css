@@ -13,6 +13,9 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 736px) {
+  .numeros{
+    display: flex;
+  }
   .puntos {
     display: flex;
     flex-direction: column;
@@ -21,6 +24,7 @@
     background: #00a8ff;
     color: white;
     margin-bottom: 15px;
+    width: 34%;
   }
   .foto-clicker {
     display: flex;
@@ -93,7 +97,7 @@
         color: #fff;
     }
 
-  
+
   .compras {
     display: flex;
     flex-direction: column;
