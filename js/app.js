@@ -26,11 +26,37 @@ function comprar(objeto) {
         var circulos = document.getElementById("circulo");
         circulos.classList.add("show");
 
+        var elem = document.getElementById("myBar"); 
+        var width = dinero;
+        var id = setInterval(frame, 10);
+        function frame() {
+            if (width >= precioProducto[objeto]) {
+            clearInterval(id);
+        } else {
+            width++; 
+            elem.style.width = width + '%'; 
+        }
+    }
     } else {
         mostrarNoDinero();
     }
 
 }
+
+function move() {
+    var elem = document.getElementById("myBar"); 
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+        if (contador >= 100) {
+            clearInterval(id);
+        } else {
+            width++; 
+            elem.style.width = width + '%'; 
+        }
+    }
+}
+
 
 //producir automatico
 function producir() {
