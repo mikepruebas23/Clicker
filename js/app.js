@@ -22,6 +22,7 @@ function comprar(objeto) {
         inventario[objeto]++;
         dinero -= precioProducto[objeto];
         precioProducto[objeto] = precioProducto[objeto] * 2;
+        document.getElementById("mcdinero").innerHTML = precioProducto[objeto];
         var circulos = document.getElementById("circulo");
         circulos.classList.add("show");
 
