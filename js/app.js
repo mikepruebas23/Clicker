@@ -23,18 +23,19 @@ function comprar(objeto) {
         dinero -= precioProducto[objeto];
         precioProducto[objeto] = precioProducto[objeto] * 2;
         document.getElementById("mcdinero").innerHTML = precioProducto[objeto];
+
         var circulos = document.getElementById("circulo");
         circulos.classList.add("show");
 
-        var elem = document.getElementById("myBar"); 
+        var elem = document.getElementById("myBar");
         var width = dinero;
         var id = setInterval(frame, 10);
         function frame() {
             if (width >= precioProducto[objeto]) {
             clearInterval(id);
         } else {
-            width++; 
-            elem.style.width = width + '%'; 
+            width++;
+            elem.style.width = width + '%';
         }
     }
     } else {
@@ -43,19 +44,19 @@ function comprar(objeto) {
 
 }
 
-function move() {
-    var elem = document.getElementById("myBar"); 
-    var width = 1;
-    var id = setInterval(frame, 10);
-    function frame() {
-        if (contador >= 100) {
-            clearInterval(id);
-        } else {
-            width++; 
-            elem.style.width = width + '%'; 
-        }
-    }
-}
+// function move() {
+//     var elem = document.getElementById("myBar");
+//     var width = 1;
+//     var id = setInterval(frame, 10);
+//     function frame() {
+//         if (contador >= 100) {
+//             clearInterval(id);
+//         } else {
+//             width++;
+//             elem.style.width = width + '%';
+//         }
+//     }
+// }
 
 
 //producir automatico
@@ -67,6 +68,7 @@ function producir() {
 //actualizar el numero de dinero que hay
 function render() {
     document.getElementById("contador").innerHTML = dinero;
+      document.getElementById("plays").innerHTML ='Reproducciones: '+ reproducciones;
     document.getElementById("inventario").innerHTML =
         `<div>Cursores: ${inventario[0]}</div>
         <div>Cursores: ${inventario[1]}</div>

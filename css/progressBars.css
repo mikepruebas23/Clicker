@@ -1,3 +1,7 @@
+.barras{
+  display: flex;
+  flex-direction: column;
+}
 #myProgress {
     width: 100%;
     background-color: grey;
@@ -6,4 +10,22 @@
     width: 1%;
     height: 30px;
     background-color: green;
+}
+#myProgress2 {
+    width: 100%;
+    background-color: grey;
+}
+#myBar2 {
+    width: 1%;
+    height: 30px;
+    background-color: red;
+}
+#myProgress3 {
+    width: 100%;
+    background-color: grey;
+}
+#myBar3 {
+    width: 1%;
+    height: 30px;
+    background-color: blue;
 }
