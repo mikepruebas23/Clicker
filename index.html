@@ -2,139 +2,152 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>clicker</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/swipe.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>clicker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/swipe.min.css">
 
 
 </head>
 
 <body>
-  <header>
-    <div class="contenedor">
-      <h1></h1>
-      <input type="checkbox" id="menu-bar">
-      <label class="icon-menu" for="menu-bar"></label>
-      <nav class="menu">
-        <a href="index.html">Inicio</a>
-        <a href="compras.html">Compras</a>
-        <a href="nuevoproducto.html">NuevoProducto</a>
-        <a href="perfil.html">Perfil</a>
-        <a href="localStorage.html">local</a>
-        <a href="">Contacto</a>
-      </nav>
+    <header>
+        <div class="contenedor">
+            <h1></h1>
+            <input type="checkbox" id="menu-bar">
+            <label class="icon-menu" for="menu-bar"></label>
+            <nav class="menu">
+                <a href="index.html">Inicio</a>
+                <a href="compras.html">Compras</a>
+                <a href="nuevoproducto.html">NuevoProducto</a>
+                <a href="perfil.html">Perfil</a>
+                <a href="localStorage.html">local</a>
+                <a href="">Contacto</a>
+                <a href="records.html">Records</a>
+
+
+            </nav>
+        </div>
+    </header>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="puntos">
+                    <div>Dinero</div>
+                    <div id="contador">0</div>
+                </div>
+                <div class="foto-clicker container">
+                    <img src="img/yo.jpg" class="imagen" onclick="clic();">
+                    <div id="circulo" class="circulo"></div>
+                </div>
+                <div class="botones">
+                    <button onclick="comprar(0);" class="btn btn1" id="mcdinero">click</button>
+                    <button onclick="comprar(1);" class="btn btn1">compra1 $200</button>
+                    <button onclick="comprar(2);" class="btn btn1">compra2 $400</button>
+                    <button class="btn btn1">PROXIMAMENTE</button>
+
+                </div>
+                <div class="compras">
+                    <div id="inventario" class="inventario"></div>
+
+                    <p id="NoDinero1">DINERO INSUFICIENTE<img src="img/dinero.svg" class="img-money" alt="Dinero"></p>
+
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <h1></h1>
+                <div class="barras">
+                    <div id="myProgress">
+                        <div id="myBar"></div>
+                    </div>
+                    <button onclick="habilidadUno();" id="farm">Activar</button>
+                    <button onclick="levelupUno();" id="mejora1">Mejorar 1</button>
+                    <br>
+                    <div id="myProgress2">
+                        <div id="myBar2"></div>
+                    </div>
+                    <button onclick="habilidadDos();" id="farm2">Activar</button>
+                    <button onclick="levelupDos();" id="mejora2">Mejorar 2</button>
+                    <br>
+
+                </div>
+
+
+            </div>
+            <div class="swiper-slide">
+                <div>
+                    <div id="plays">Reproducciones: 0</div>
+                    <button onclick="convertirReproducciones();" id="cobrar">cobrar</button>
+                </div>
+                <div id="myProgress3">
+                    <div id="myBar3"></div>
+                </div>
+                <button onclick="activarCancion();" id="farm3">Activar</button>
+                <button onclick="grabarCancion();" id="mejora3">Mejorar 3</button>
+            </div>
+            <div class="swiper-slide">
+
+                <h5 id="nombreUsuario"></h5>
+                <p id="correoUsuario"><i class="fa fa-map-marker" aria-hidden="true"></i></p>
+                <div id="contadorDos">0</div>
+                <p>
+                    <ol id="scorelist">
+                    </ol>
+                </p>
+                <button id="btn-incremento">Submit</button>
+            </div>
+            <!-- <div class="swiper-slide">Slide 5</div> -->
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
     </div>
-  </header>
-  <!-- Swiper -->
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
+
+    <div class="numeros">
         <div class="puntos">
-          <div>Dinero</div>
-          <div id="contador">0</div>
+            <div>Dinero</div>
+            <div id="contador">0</div>
         </div>
-        <div class="foto-clicker container">
-          <img src="img/santaTrap.jpg" class="imagen" onclick="clic();">
-          <div id="circulo" class="circulo"></div>
+        <div class="puntos">
+            <div>Youtube</div>
+            <div id="contador2">0</div>
         </div>
-        <div class="botones">
-          <button onclick="comprar(0);" class="btn btn1" id="mcdinero">click</button>
-          <button onclick="comprar(1);" class="btn btn1">compra1 $200</button>
-          <button onclick="comprar(2);" class="btn btn1">compra2 $400</button>
-          <button class="btn btn1">PROXIMAMENTE</button>
-
+        <div class="puntos">
+            <div>facebook</div>
+            <div id="contador3">0</div>
         </div>
-        <div class="compras">
-          <div id="inventario" class="inventario"></div>
-
-          <p id="NoDinero1">DINERO INSUFICIENTE<img src="img/dinero.svg" class="img-money" alt="Dinero"></p>
-
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <h1></h1>
-        <div class="barras">
-          <div id="myProgress">
-            <div id="myBar"></div>
-          </div>
-          <button onclick="habilidadUno();" id="farm">Activar</button>
-          <button onclick="levelupUno();" id="mejora1">Mejorar 1</button>
-          <br>
-          <div id="myProgress2">
-            <div id="myBar2"></div>
-          </div>
-          <button onclick="habilidadDos();" id="farm2">Activar</button>
-          <button onclick="levelupDos();" id="mejora2">Mejorar 2</button>
-          <br>
-
-        </div>
-
-
-        </div>
-        <div class="swiper-slide">
-          <div>
-            <div id="plays">Reproducciones: 0</div>
-            <button onclick="convertirReproducciones();" id="cobrar">cobrar</button>
-          </div>
-          <div id="myProgress3">
-            <div id="myBar3"></div>
-          </div>
-          <button onclick="activarCancion();" id="farm3">Activar</button>
-          <button onclick="grabarCancion();" id="mejora3">Mejorar 3</button>
-        </div>
-      <div class="swiper-slide">Slide 4</div>
-      <div class="swiper-slide">Slide 5</div>
     </div>
-    <!-- Add Pagination -->
-    <div class="swiper-pagination"></div>
-  </div>
-
-  <div class="numeros">
-    <div class="puntos">
-      <div>Dinero</div>
-      <div id="contador">0</div>
+    <div class="foto-clicker container">
+        <img src="img/santaTrap.jpg" class="imagen" onclick="clic();">
+        <div id="circulo" class="circulo"></div>
     </div>
-    <div class="puntos">
-      <div>Youtube</div>
-      <div id="contador2">0</div>
+    <div class="botones">
+        <button onclick="comprar(0);" class="btn btn1">click $10</button>
+        <button onclick="comprar(1);" class="btn btn1">compra1 $200</button>
+        <button onclick="comprar(2);" class="btn btn1">compra2 $400</button>
+        <button class="btn btn1">PROXIMAMENTE</button>
     </div>
-    <div class="puntos">
-      <div>facebook</div>
-      <div id="contador3">0</div>
+    <div class="compras">
+        <div id="inventario" class="inventario"></div>
+
+        <p id="NoDinero1">DINERO INSUFICIENTE<img src="img/dinero.svg" class="img-money" alt="Dinero"></p>
+
     </div>
-  </div>
-  <div class="foto-clicker container">
-    <img src="img/santaTrap.jpg" class="imagen" onclick="clic();">
-    <div id="circulo" class="circulo"></div>
-  </div>
-  <div class="botones">
-    <button onclick="comprar(0);" class="btn btn1">click $10</button>
-    <button onclick="comprar(1);" class="btn btn1">compra1 $200</button>
-    <button onclick="comprar(2);" class="btn btn1">compra2 $400</button>
-    <button class="btn btn1">PROXIMAMENTE</button>
-  </div>
-  <div class="compras">
-    <div id="inventario" class="inventario"></div>
-
-    <p id="NoDinero1">DINERO INSUFICIENTE<img src="img/dinero.svg" class="img-money" alt="Dinero"></p>
-
-  </div>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
-  <script src="js/clicker.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/menu.js"></script>
-  <script src="js/swiper.min.js"></script>
-  <script src="js/Habilidades.js"></script>
-  <script>
-    var swiper = new Swiper('.swiper-container');
-  </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+    <script src="js/clicker.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/Habilidades.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container');
+    </script>
 
 
 

@@ -30,14 +30,15 @@ function comprar(objeto) {
         var elem = document.getElementById("myBar");
         var width = dinero;
         var id = setInterval(frame, 10);
+
         function frame() {
             if (width >= precioProducto[objeto]) {
-            clearInterval(id);
-        } else {
-            width++;
-            elem.style.width = width + '%';
+                clearInterval(id);
+            } else {
+                width++;
+                elem.style.width = width + '%';
+            }
         }
-    }
     } else {
         mostrarNoDinero();
     }
@@ -68,7 +69,8 @@ function producir() {
 //actualizar el numero de dinero que hay
 function render() {
     document.getElementById("contador").innerHTML = dinero;
-      document.getElementById("plays").innerHTML ='Reproducciones: '+ reproducciones;
+    document.getElementById("contadorDos").innerHTML = dinero;
+    document.getElementById("plays").innerHTML = 'Reproducciones: ' + reproducciones;
     document.getElementById("inventario").innerHTML =
         `<div>Cursores: ${inventario[0]}</div>
         <div>Cursores: ${inventario[1]}</div>
@@ -89,8 +91,9 @@ setInterval(function() {
 function mostrarNoDinero() {
     var x = document.getElementById("NoDinero1");
     x.className = "show";
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    setTimeout(function() { x.className = x.className.replace("show", ""); }, 3000);
 }
+
 function crearCirculo(objeto) {
     var circulos = document.getElementById("circulo");
     circulos.classList.add("show");
