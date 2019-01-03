@@ -16,6 +16,58 @@ $(document).ready(function() {
     var precio;
     var imagen;
 
+    //datos para el usuario
+    var rango = 'Novato';
+
+    //scoreBoard
+    var refPuntos = database.ref('puntuaciones');
+    refPuntos.on('value', goData);
+
+    function goData(data) {
+
+        var scoreBoard = document.getElementById('scoreBoard');
+        for (var i = 0; i < scoreBoard.length; i++) {
+            scoreBoard[i].remove();
+        }
+
+        var datosUsuario = data.val();
+        //record = datosUsuario.score;
+        //console.log("DATOOOOOS: " + datosUsuario);
+        //console.log("DATOSSSS" + datosUsuario.initials, datosUsuario.score);
+
+        var keys = Object.keys(datosUsuario);
+        // console.log(keys);
+        for (var i = 0; i < keys.length; i++) {
+
+            var k = keys[i];
+            NombreCompletoUsuario = datosUsuario[k].nombreUsuarioLogeado;
+            CorreoCompetoUsuario = datosUsuario[k].correoUsuario;
+            PuntosCompletosUsuario = datosUsuario[k].puntos;
+            RangoCompletoUsuario = datosUsuario[k].rangoUsuario;
+
+
+            //pintar los elementos
+            var nombres = document.createElement("div");
+            var correos = document.createElement("div");
+            var puntos = document.createElement("div");
+            var rangos = document.createElement("div");
+            var nodeNombres = document.createTextNode(NombreCompletoUsuario);
+            var nodeCorreos = document.createTextNode(CorreoCompetoUsuario);
+            var nodePuntos = document.createTextNode(PuntosCompletosUsuario);
+            var nodeRangos = document.createTextNode(RangoCompletoUsuario);
+            nombres.appendChild(nodeNombres);
+            correos.appendChild(nodeCorreos);
+            puntos.appendChild(nodePuntos);
+            rangos.appendChild(nodeRangos);
+            var element = document.getElementById("nom");
+            element.appendChild(nombres);
+            element.appendChild(correos);
+            element.appendChild(puntos);
+            element.appendChild(rangos);
+
+        }
+    }
+
 
     // Chequeamos la autenticación antes de acceder al resto de contenido de este fichero.
     firebase.auth().onAuthStateChanged(function(user) {
@@ -31,9 +83,16 @@ $(document).ready(function() {
 
             nombreUsuario = user.displayName;
             emailUsuario = user.email;
+            usuarioID = user.uid;
 
             document.getElementById('correoUsuario').innerHTML = emailUsuario;
             document.getElementById('nombreUsuario').innerHTML = nombreUsuario;
+
+
+
+
+
+
 
 
         } else {
@@ -77,19 +136,26 @@ $(document).ready(function() {
     });
 
     //botonRegistrar puntos
-
     $('#btn-incremento').click(function() {
         console.log(nombreUsuario);
         console.log(emailUsuario);
+        console.log(usuarioID);
+
+
 
         var refPuntuaciones = database.ref("puntuaciones");
         console.log(refPuntuaciones);
 
-        refPuntuaciones.set({
-            puntos: dinero
+        refPuntuaciones.child(usuarioID).set({
+            nombreUsuarioLogeado: nombreUsuario,
+            correoUsuario: emailUsuario,
+            puntos: dinero,
+            rangoUsuario: rango
+
 
         }, function() {
             alert('El alta se ha realizado correctamente');
+            location.reload();
         });
 
 

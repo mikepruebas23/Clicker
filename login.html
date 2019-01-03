@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -13,26 +15,26 @@
     <script src="js/login.js"></script>
     <title>Login de Usuarios</title>
 </head>
+
 <body>
-    <div class="container-fluid">
-        <h1>Login/registro de Usuarios</h1>
-        <div id="spinner"></div>
-        <form id="formularioRegistro">
-            <div class="form-group">
-                <label for="email">Dirección E-mail: </label>
-                <input type="text" class="form-control" id="email" placeholder="Introduzca su e-mail">
-            </div>
+    <div class="form">
 
-            <div class="form-group">
-                <label for="password">Contraseña: </label>
-                <input type="password" class="form-control" id="password" placeholder="Introduzca contraseña">
-            </div>
+        <form class="register-form">
 
-            <button type="button" class="btn btn-success" id="botonLogin">Login</button>
-            <button type="button" class="btn btn-primary" id="botonRegistro">Registro</button>
-            <button type="button" class="btn btn-warning" id="botonCancelar">Cancelar</button>
+            <input type="text" id="emailR" placeholder="correo electronico" />
+            <input type="password" id="passwordR" placeholder="contraseña" />
+            <input type="password" id="passwordR2" placeholder="confirmar contraseña" />
+            <button type="button" id="botonRegistro2">Crear Cuenta</button>
+            <p class="message">Ya estas Registrado? <a href="#">Acceder</a></p>
+        </form>
+        <form class="login-form">
+            <input type="text" id="email" placeholder="correo electronico" />
+            <input type="password" id="password" placeholder="contraseña" />
+            <button type="button" id="botonLogin">Entrar</button>
+            <p class="message">No Estas Registrado? <a href="#">Crear una cuenta</a></p>
         </form>
     </div>
 
 </body>
+
 </html>
