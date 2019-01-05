@@ -47,23 +47,25 @@ $(document).ready(function() {
 
 
             //pintar los elementos
-            var nombres = document.createElement("div");
-            var correos = document.createElement("div");
-            var puntos = document.createElement("div");
-            var rangos = document.createElement("div");
+            var nombre2 = document.getElementById('nombre2');
+            var statPuntos = document.getElementById('statPuntos');
+            //var nombres = document.createElement("div");
+            // var correos = document.createElement("div");
+            // var puntos = document.createElement("div");
+            // var rangos = document.createElement("div");
             var nodeNombres = document.createTextNode(NombreCompletoUsuario);
-            var nodeCorreos = document.createTextNode(CorreoCompetoUsuario);
+            // var nodeCorreos = document.createTextNode(CorreoCompetoUsuario);
             var nodePuntos = document.createTextNode(PuntosCompletosUsuario);
-            var nodeRangos = document.createTextNode(RangoCompletoUsuario);
-            nombres.appendChild(nodeNombres);
-            correos.appendChild(nodeCorreos);
-            puntos.appendChild(nodePuntos);
-            rangos.appendChild(nodeRangos);
-            var element = document.getElementById("nom");
-            element.appendChild(nombres);
-            element.appendChild(correos);
-            element.appendChild(puntos);
-            element.appendChild(rangos);
+            // var nodeRangos = document.createTextNode(RangoCompletoUsuario);
+            nombre2.appendChild(nodeNombres);
+            // correos.appendChild(nodeCorreos);
+            statPuntos.appendChild(nodePuntos);
+            // rangos.appendChild(nodeRangos);
+            var element = document.getElementById("contentnames");
+            element.appendChild(nombre2);
+            // element.appendChild(correos);
+            element.appendChild(statPuntos);
+            // element.appendChild(rangos);
 
         }
     }
@@ -87,12 +89,6 @@ $(document).ready(function() {
 
             document.getElementById('correoUsuario').innerHTML = emailUsuario;
             document.getElementById('nombreUsuario').innerHTML = nombreUsuario;
-
-
-
-
-
-
 
 
         } else {

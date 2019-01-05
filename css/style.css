@@ -7,7 +7,7 @@
 @import url('menu.css');
 @import url('fontello.css');
 @import url('swipe.css');
-@import url('Habilidades.css');
+@import url('leaderBoard.css');
 @import url('progressBars.css');
 * {
     margin: 0;
@@ -36,8 +36,28 @@
         margin-top: 25px;
         margin-bottom: 40px;
     }
-    .imagen:active {
-        transform: scale(.9);
+    /* .imagen:active {
+        transform: scale(.9); 
+        transform: translate(0, 4px); 
+        transform: translate(0, 4px);
+    } */
+    @keyframes shaker {
+        0% {
+            -webkit-transform: translate(2px, 0);
+        }
+        50% {
+            -webkit-transform: translate(-2px, 0);
+        }
+        100% {
+            -webkit-transform: translate(2px, 0);
+        }
+    }
+    .shake {
+        animation-name: shaker;
+        animation-duration: 0.1s;
+        transform-origin: 50% 50%;
+        animation-timing-function: linear;
+        background-color: #c0392b;
     }
     .botones {
         margin-top: 15px;
