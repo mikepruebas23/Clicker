@@ -22,7 +22,7 @@ function comprar(objeto) {
         inventario[objeto]++;
         dinero -= precioProducto[objeto];
         precioProducto[objeto] = precioProducto[objeto] * 2;
-        document.getElementById("mcdinero").innerHTML = precioProducto[objeto];
+        document.getElementById("mcdinero").innerHTML = precioProducto[objeto] + ' $';
 
         var circulos = document.getElementById("circulo");
         circulos.classList.add("show");
@@ -71,11 +71,11 @@ function render() {
     document.getElementById("contador").innerHTML = dinero;
     document.getElementById("contadorDos").innerHTML = dinero;
     document.getElementById("plays").innerHTML = 'Reproducciones: ' + reproducciones;
-    document.getElementById("inventario").innerHTML =
-        `<div>Cursores: ${inventario[0]}</div>
-        <div>Cursores: ${inventario[1]}</div>
-      <div>Cursores: ${inventario[2]}</div>
-        `;
+    // document.getElementById("inventario").innerHTML =
+    //     `<div>Cursores: ${inventario[0]}</div>
+    //     <div>Cursores: ${inventario[1]}</div>
+    //   <div>Cursores: ${inventario[2]}</div>
+    //     `;
 }
 //frames para mostrar el aumento del contador
 var FPS = 1;

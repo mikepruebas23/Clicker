@@ -100,3 +100,12 @@
     font-size: 10px;
     vertical-align: sub;
 }
+.tablaPuntuaciones{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+#tablaNombres,
+#tablaPuntos{
+    width: 50%;
+}

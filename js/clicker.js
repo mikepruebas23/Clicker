@@ -23,6 +23,8 @@ $(document).ready(function() {
     var refPuntos = database.ref('puntuaciones');
     refPuntos.on('value', goData);
 
+   
+
     function goData(data) {
 
         var scoreBoard = document.getElementById('scoreBoard');
@@ -37,6 +39,12 @@ $(document).ready(function() {
 
         var keys = Object.keys(datosUsuario);
         // console.log(keys);
+
+        // refPuntos.orderByValue().limitToLast(3).on("value", function(snapshot) {
+        //     snapshot.forEach(function(data) {
+        //       console.log("The " + data.key[0] + " score is " + data.val());
+        //     });
+        //   });
         for (var i = 0; i < keys.length; i++) {
 
             var k = keys[i];
@@ -44,38 +52,44 @@ $(document).ready(function() {
             CorreoCompetoUsuario = datosUsuario[k].correoUsuario;
             PuntosCompletosUsuario = datosUsuario[k].puntos;
             RangoCompletoUsuario = datosUsuario[k].rangoUsuario;
+//console.log('PUNTOS',PuntosCompletosUsuario);
+
+
+
+//points.sort(function(a, b){return b-a});
+
+    //         numeromayor = sueldos[0]
+
+    //         for( i=0; i<sueldos.length && i<nombres.length; i++){
+    // //         
+    //             if(sueldos[i]>numeromayor){ 
+    //                 numeromayor = sueldos[i];
+    //                 System.out.println(numeromayor);
+    //             }
+    //         }
+        
+    
 
 
             //pintar los elementos
-            var nombre2 = document.getElementById('nombre2');
-            var statPuntos = document.getElementById('statPuntos');
-            //var nombres = document.createElement("div");
-            // var correos = document.createElement("div");
-            // var puntos = document.createElement("div");
-            // var rangos = document.createElement("div");
-            var nodeNombres = document.createTextNode(NombreCompletoUsuario);
-            // var nodeCorreos = document.createTextNode(CorreoCompetoUsuario);
-            var nodePuntos = document.createTextNode(PuntosCompletosUsuario);
-            // var nodeRangos = document.createTextNode(RangoCompletoUsuario);
-            nombre2.appendChild(nodeNombres);
-            // correos.appendChild(nodeCorreos);
-            statPuntos.appendChild(nodePuntos);
-            // rangos.appendChild(nodeRangos);
-            var element = document.getElementById("contentnames");
-            element.appendChild(nombre2);
-            // element.appendChild(correos);
-            element.appendChild(statPuntos);
-            // element.appendChild(rangos);
-
+            var DivNombre = document.createElement("div");
+            DivNombre.innerHTML=NombreCompletoUsuario;
+            var DivPuntos = document.createElement("div");
+            DivPuntos.innerHTML=PuntosCompletosUsuario;
+            var TNombres = document.getElementById('tablaNombres');
+            var TPuntos = document.getElementById('tablaPuntos');
+            TNombres.appendChild(DivNombre);
+            TPuntos.appendChild(DivPuntos);
         }
+//         var points = [PuntosCompletosUsuario];
+// console.log('arregloe points',points)
     }
-
 
     // Chequeamos la autenticación antes de acceder al resto de contenido de este fichero.
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-            console.log(user);
-            console.log('Usuario: ' + user.uid + ' está logueado con ' + user.providerData[0].providerId);
+            // console.log(user);
+            // console.log('Usuario: ' + user.uid + ' está logueado con ' + user.providerData[0].providerId);
             var logueado = '<li><p class="navbar-text navbar-center">' + user.email + '</p></li>';
             logueado += '<li><button type="button" class="btn btn-warning navbar-btn" id="botonLogout">Salir</button></li>';
 

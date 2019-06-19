@@ -91,6 +91,7 @@ $(document).ready(function()
         {
             imagen="NONE";
         }
+        console.log(imagen);
 
         // Indicamos que la referencia base de nuestra base de datos es productos (algo así como el padre)
         // del que colgarán el resto de nodos hijos.
@@ -136,7 +137,7 @@ $(document).ready(function()
             imagen: imagen
         },function()
         {
-            alert('El alta se ha realizado correctamente');
+            alert('El alta se ha realizado correctamente', imagen);
         });
     });
 
