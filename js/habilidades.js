@@ -197,7 +197,7 @@ function convertirReproducciones() {
 mejorarHabilidad1();
 function mejorarHabilidad1(){
 
-  if(llaves >= 3){
+  if(llaves >= 20){
     document.getElementById('mejora1').disabled = false; 
     document.getElementById('mejora1').classList.remove("btn-disabled");
   }
