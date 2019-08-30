@@ -20,6 +20,7 @@
 
 @media screen and (min-width: 320px) and (max-width: 736px) {
     .puntos {
+        margin-top: 20%;
         font-family: 'Lilita One';
         display: flex;
         flex-direction: column;

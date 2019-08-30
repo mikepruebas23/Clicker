@@ -19,7 +19,7 @@ var segundos = 5; //tiempo del contador
 var timerX;
 
 var llaves = 1;
-var candados = 3;
+var candados = 20;
 var desHabilidadID = document.getElementById("desHabilidad");
 desHabilidadID.innerHTML = llaves;
 var candadosID = document.getElementById("candado");
