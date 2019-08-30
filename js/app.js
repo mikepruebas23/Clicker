@@ -70,7 +70,7 @@ function producir() {
 function render() {
     document.getElementById("contador").innerHTML = dinero;
     document.getElementById("contadorDos").innerHTML = dinero;
-    document.getElementById("plays").innerHTML = 'Reproducciones: ' + reproducciones;
+    // document.getElementById("plays").innerHTML = 'Reproducciones: ' + reproducciones;
     // document.getElementById("inventario").innerHTML =
     //     `<div>Cursores: ${inventario[0]}</div>
     //     <div>Cursores: ${inventario[1]}</div>

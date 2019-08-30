@@ -27,7 +27,7 @@ candadosID.innerHTML = candados;
 
 function powerA() {
   document.getElementById('farm').disabled = true; 
-    document.getElementById('farm').classList.add("btn-disabled");
+  document.getElementById('farm').classList.add("btn-disabled");
   
   const PERCENT = 100 / segundos; // Percent for progress bar
   var accum = 0; // Accum
