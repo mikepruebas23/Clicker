@@ -39,7 +39,7 @@
                     <div id="contador">0</div>
                 </div>
                 <div class="foto-clicker container">
-                    <img src="img/yo.jpg" class="imagen" onclick="clic();">
+                    <img src="img/yo.jpsaasg" class="imagen" onclick="clic();">
                     <div id="circulo" class="circulo"></div>
                 </div>
                 <div class="botones">
@@ -62,21 +62,36 @@
                 </div>
 
             </div>
-            <div class="swiper-slide" id="slide2">
+            <div class="swiper-slide" style="padding: 5px; background:#eee;" id="slide2">
                 <h1></h1>
                 <div class="barras">
-                    <div id="myProgress">
-                        <div id="myBar"></div>
-                    </div>
-                    <button onclick="habilidadUno();" id="farm">Activar</button>
-                    <button onclick="levelupUno();" id="mejora1">Mejorar 1</button>
-                    <br>
-                    <div id="myProgress2">
-                        <div id="myBar2"></div>
-                    </div>
-                    <button onclick="habilidadDos();" id="farm2">Activar</button>
-                    <button onclick="levelupDos();" id="mejora2">Mejorar 2</button>
-                    <br>
+                   <div class="barra1 barra-space">
+                       <div class="barrauno">
+                            <p id="timer" class="txt-time">00:00</p>
+                            <p class="txt-costos">Recursos</p>
+                        </div>
+                            <div id="myProgress">
+                                <div id="myBar"></div>
+                            </div>
+                        <!-- <button class="btn-p1" onclick="habilidadUno();" id="farm">Activar</button> -->
+                        <div class="action-btn">
+                            <button class="btn btn3" onclick="powerA()" id="farm">ACTIVAR</button>
+                            <button class="btn btn2" onclick="levelupUno();" id="mejora1">MEJORAR</button>
+                        </div>
+                   </div>
+                   <div class="barra2 barra-space">
+                        <div class="barrados">
+                                <p id="timer2" class="txt-time">00:00</p>
+                                <p class="txt-costos">Recursos</p>
+                            </div>
+                        <div id="myProgress2">
+                            <div id="myBar2"></div>
+                        </div>
+                       <div class="action-btn">
+                            <button class="btn btn3" onclick="habilidadDos();" id="farm2">ACTIVAR</button>
+                            <button class="btn btn2" onclick="levelupDos();" id="mejora2">MEJORAR</button>
+                       </div>
+                   </div>
                 </div>
             </div>
             <div class="swiper-slide">
@@ -111,7 +126,8 @@
 
                 <div class="wrapper">
                     <div class="wrapper__header">
-                        <div class="b_logo"><img src="https://images.vexels.com/media/users/3/135313/isolated/lists/9c44517fa04da541c35888362bce2d1b-award-trophy-icon.png"
+                        <div class="b_logo"><img
+                                src="https://images.vexels.com/media/users/3/135313/isolated/lists/9c44517fa04da541c35888362bce2d1b-award-trophy-icon.png"
                                 width="40" alt="" /></div>
                         <div class="b_caption">
                             <p>clicker <span>Tabla de puntuaciones</span></p>

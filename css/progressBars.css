@@ -1,31 +1,144 @@
-.barras{
-  display: flex;
-  flex-direction: column;
+.barras {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    background: #eee;
 }
+
+.barra1,
+.barra2 {
+    box-shadow: rgba(255, 255, 255, 1) 0px 1px 0px inset,
+    rgba(0, 0, 0, 0.3) 0px 2px 1px;
+    padding: 10px;
+
+}
+
+.barrauno,
+.barrados {
+    display: flex;
+    justify-content: center;
+}
+
+.barra-space {
+    margin-top: 8px;
+    background: white;
+}
+
+.barrauno>p,
+.barrados>p {
+    width: 50%;
+    text-align: center;
+    margin: 5px;
+    background: #eee;
+}
+
+.action-time {
+    background: #ffc107 !important;
+    color: white !important;
+}
+
+.txt-time,
+.txt-costos {
+    font-family: 'Lilita One';
+}
+
+.txt-costos {
+    background: #ff4757 !important;
+    color: white;
+}
+
+.action-btn {
+    display: flex;
+}
+
 #myProgress {
-    width: 100%;
-    background-color: grey;
+    width: 90%;
+    margin: 0 auto;
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 20px;
+    overflow: hidden;
 }
+
 #myBar {
-    width: 1%;
-    height: 30px;
-    background-color: green;
+    width: 0%;
+    height: 18px;
+    background: #00c875;
+    background: -webkit-linear-gradient(to bottom, #37dd4e, #00c875);
+    background: linear-gradient(to bottom, #37dd4e, #00c875);
+
+
 }
+
 #myProgress2 {
-    width: 100%;
-    background-color: grey;
+    width: 90%;
+    margin: 0 auto;
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 20px;
+    overflow: hidden;
 }
+
 #myBar2 {
-    width: 1%;
-    height: 30px;
-    background-color: red;
+    width: 50%;
+    height: 18px;
+    background: #FFE000;
+    background: -webkit-linear-gradient(to top, rgb(255, 251, 4), #FFE000);
+    background: linear-gradient(to top, rgb(252, 251, 4), #FFE000);
+
 }
+
 #myProgress3 {
     width: 100%;
     background-color: grey;
 }
+
 #myBar3 {
     width: 1%;
     height: 30px;
     background-color: blue;
+}
+
+/*botones*/
+.btn-p1 {
+    margin-top: 5px;
+}
+
+/*animacion barra progresso*/
+@keyframes stretch {
+    0% {
+        width: 0;
+    }
+
+    15% {
+        width: 15%;
+    }
+
+    25% {
+        width: 25%;
+    }
+
+    45% {
+        width: 45%;
+    }
+
+    50% {
+        width: 50%;
+    }
+
+    65% {
+        width: 65%;
+    }
+
+    75% {
+        width: 75%;
+    }
+
+    90% {
+        width: 90%;
+    }
+
+    100% {
+        width: 100%;
+    }
 }

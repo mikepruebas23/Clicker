@@ -24,8 +24,8 @@ $(document).ready(function() {
       uid = user.uid;
       document.getElementById('correoUsuario').innerHTML = email;
       document.getElementById('nombreUsuario').innerHTML = name;
-      console.log(email);
-      console.log(name);
+      // console.log(email);
+      // console.log(name);
 
     } else {
       console.log("NO if 1");
