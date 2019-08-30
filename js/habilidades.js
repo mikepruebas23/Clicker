@@ -15,10 +15,19 @@ var contaTime = document.getElementById("timer");
 
 var mins = 0;
 var secs = 0;
-var segundos = 7; //tiempo del contador
+var segundos = 5; //tiempo del contador
 var timerX;
 
+var llaves = 1;
+var candados = 3;
+var desHabilidadID = document.getElementById("desHabilidad");
+desHabilidadID.innerHTML = llaves;
+var candadosID = document.getElementById("candado");
+candadosID.innerHTML = candados;
+
 function powerA() {
+  document.getElementById('farm').disabled = true; 
+    document.getElementById('farm').classList.add("btn-disabled");
   
   const PERCENT = 100 / segundos; // Percent for progress bar
   var accum = 0; // Accum
@@ -54,12 +63,9 @@ function powerA() {
   
     contaTime.textContent = currentTime;
     barraDeEstaminaUno.style.width = accum + '%';
-    document.getElementById('farm').disabled = true; 
-    document.getElementById('farm').classList.add("btn-disabled");
-    document.getElementById('timer').classList.add("action-time");
-    // document.getElementById('farm').style.background = '#ab7800'; 
-    // document.getElementById('farm').style.borderBottom = '3px solid #ab7800';
-    // document.getElementById('farm').style.borderTop= '3px solid #ab7800'; 
+    // document.getElementById('farm').disabled = true; 
+    // document.getElementById('farm').classList.add("btn-disabled");
+    document.getElementById('b-tiempo').classList.add("action-time");
     
     
     document.getElementById('mejora1').disabled = true;
@@ -70,11 +76,14 @@ function powerA() {
       dinero = sumaDinero + dinero;
       document.getElementById('farm').disabled = false;
       document.getElementById('farm').classList.remove("btn-disabled");
-      document.getElementById('timer').classList.remove("action-time");
-      document.getElementById('mejora1').disabled = false;
-      document.getElementById('mejora1').classList.remove("btn-disabled");
+      document.getElementById('b-tiempo').classList.remove("action-time");
+      // document.getElementById('mejora1').disabled = false;
+      // document.getElementById('mejora1').classList.remove("btn-disabled");
       secs = 0;
       contaTime.textContent = '00:00';
+      llaves++;
+      desHabilidadID.innerHTML = llaves;
+      mejorarHabilidad1();
   
     }
   }, TIME);
@@ -120,6 +129,9 @@ function activarCancion() {
 
 
 function levelupUno() {
+
+
+
   if (dinero >= precioHabilidadUno) {
     cantidadFramesUno += 10;
     sumaDinero += 2;
@@ -142,7 +154,7 @@ function levelupDos() {
     precioHabilidadDos = precioHabilidadDos * 2;
     document.getElementById("mejora2").innerHTML = precioHabilidadDos + ' para mejorar la habilidad';
     document.getElementById("plays").innerHTML = 'reproducciones: ' + reproducciones;
-    // reproducciones: 0
+    reproducciones: 0
     console.log('cantidad de suma dinero lv2 =' + sumaDinero);
     console.log('Frames Dos: ' + cantidadFramesDos);
     console.log('Precio Habilidad Dos: ' + precioHabilidadDos);
@@ -179,6 +191,25 @@ function convertirReproducciones() {
   console.log('valor de dinero = ' + dinero);
   reproducciones = 0;
 
+}
+
+// if(dinero)
+mejorarHabilidad1();
+function mejorarHabilidad1(){
+
+  if(llaves >= 3){
+    document.getElementById('mejora1').disabled = false; 
+    document.getElementById('mejora1').classList.remove("btn-disabled");
+  }
+  else {
+    document.getElementById('mejora1').disabled = true; 
+    document.getElementById('mejora1').classList.add("btn-disabled");
+  }
+
+}
+
+function observador(){
+  console.log('si');
 }
 
 // function programarAviso(){

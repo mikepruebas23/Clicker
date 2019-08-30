@@ -62,37 +62,54 @@
                 </div>
 
             </div>
-            <div class="swiper-slide" style="padding: 5px; background:#eee;" id="slide2">
+            <div class="swiper-slide" style="background:#eee;" id="slide2">
                 <h1></h1>
                 <div class="barras">
-                   <div class="barra1 barra-space">
-                       <div class="barrauno">
-                            <p id="timer" class="txt-time">00:00</p>
-                            <p class="txt-costos">Recursos</p>
-                        </div>
-                            <div id="myProgress">
-                                <div id="myBar"></div>
+                    <div class="barra1 barra-space">
+                        <div class="barrauno">
+                            <div class="barra-tiempo" id="b-tiempo">
+                                <div>&#x23F2;</div>
+                                <div id="timer" class="txt-time">00:00</div>
                             </div>
+                            <div class="barra-costo">
+                                <div class="barra-llave">
+                                    <div>&#128273;</div>
+                                    <div class="txt-costos" id="desHabilidad"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="myProgress">
+                            <div id="myBar"></div>
+                        </div>
                         <!-- <button class="btn-p1" onclick="habilidadUno();" id="farm">Activar</button> -->
                         <div class="action-btn">
                             <button class="btn btn3" onclick="powerA()" id="farm">ACTIVAR</button>
-                            <button class="btn btn2" onclick="levelupUno();" id="mejora1">MEJORAR</button>
+                            <button class="btn btn2" onclick="levelupUno();" id="mejora1">
+                                    <div class="barra-candado">
+                                            <div>&#128274;</div>
+                                            <div class="txt-costos" id="candado">0</div>
+                                    </div>
+                            </button>
                         </div>
-                   </div>
-                   <div class="barra2 barra-space">
+                    </div>
+                    <div class="barra2 barra-space">
                         <div class="barrados">
-                                <p id="timer2" class="txt-time">00:00</p>
-                                <p class="txt-costos">Recursos</p>
-                            </div>
+                            <p id="timer2" class="txt-time">00:00</p>
+                            <p class="txt-costos">Recursos</p>
+                        </div>
                         <div id="myProgress2">
                             <div id="myBar2"></div>
                         </div>
-                       <div class="action-btn">
+                        <div class="action-btn">
                             <button class="btn btn3" onclick="habilidadDos();" id="farm2">ACTIVAR</button>
                             <button class="btn btn2" onclick="levelupDos();" id="mejora2">MEJORAR</button>
-                       </div>
-                   </div>
+                        </div>
+                    </div>
                 </div>
+                <!-- bloqueador de nivel de pantalla -->
+                <!-- <div class="bloqueador-level" id="block-lvl-1">
+                    <button class="btn btn3">Desbloquear</button>
+                </div> -->
             </div>
             <div class="swiper-slide">
                 <div>

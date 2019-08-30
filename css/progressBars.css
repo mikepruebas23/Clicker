@@ -18,6 +18,51 @@
     display: flex;
     justify-content: center;
 }
+.barra-tiempo{
+    background: #eee;
+}
+.barra-tiempo{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;   
+    margin: 5px;
+    
+}
+.barra-costo{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;   
+    margin: 5px;
+    background:#ff4757;
+    
+}
+.barra-costo > div {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+}
+/* .barra-tiempo > div {
+    width: 20%;
+    text-align: center;
+} */
+.barra-tiempo > div:nth-child(1){
+    width: 20%;
+    text-align: center;
+}
+.barra-tiempo > div:nth-child(2){
+    width: 50%;
+    text-align: center;
+}
+.barra-candado{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    text-align: center;
+    align-content: center;
+    margin: 0 auto;
+}
 
 .barra-space {
     margin-top: 8px;
@@ -43,7 +88,7 @@
 }
 
 .txt-costos {
-    background: #ff4757 !important;
+    /* background: #ff4757 !important; */
     color: white;
 }
 

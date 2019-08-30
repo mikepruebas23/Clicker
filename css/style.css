@@ -11,6 +11,7 @@
 @import url('progressBars.css');
 @import url('pagination.css');
 @import url('buttons.css');
+@import url('bloqueadores.css');
 
 * {
     margin: 0;
