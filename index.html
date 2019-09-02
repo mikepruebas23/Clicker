@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/swipe.min.css">
+    <link rel="stylesheet" href="css/noti.css">
 </head>
 
 <body>
@@ -35,7 +36,7 @@
 
             <div class="swiper-slide" style="background: rgb(238, 238, 238);">
                 <div class="puntos">
-                   <div class="p-monetarios">
+                    <div class="p-monetarios">
                         <div class="puntos-dinero">
                             <div>&#128178;</div>
                             <div id="contador">0</div>
@@ -48,8 +49,8 @@
                             <div>&#128142;</div>
                             <div id="contador-gemas">0</div>
                         </div>
-                   </div>
-                   <div class="p-exp">
+                    </div>
+                    <div class="p-exp">
                         <div class="puntos-estrella">
                             <div>&#11088;</div>
                             <div id="">0</div>
@@ -62,18 +63,21 @@
                             <div>&#128169;</div>
                             <div id="">0</div>
                         </div>
-                   </div>
+                    </div>
                 </div>
                 <div class="foto-clicker">
-                    <img src="img/skaneman.jpg" class="imagen" onclick="clic();">
+                    <img src="img/sa.jpg" class="imagen" onclick="clic();">
                     <div id="circulo" class="circulo"></div>
                 </div>
+                
+
                 <div class="section-buttons barra-space">
                     <a onclick="comprar(0);" class="btn btn1" id="mcdinero">click</a>
                     <a onclick="comprar(1);" class="btn btn1">compra1 $200</a>
                     <a onclick="comprar(2);" class="btn btn1">compra2 $400</a>
                     <a class="btn btn1">PROXIMAMENTE</a>
                 </div>
+
                 <div class="compras">
                     <div id="inventario" class="inventario">
                         <div class="icon-bar">
@@ -91,33 +95,40 @@
             <div class="swiper-slide" style="background:#eee;" id="slide2">
                 <h1></h1>
                 <div class="barras">
-                    <div class="barra1 barra-space">
-                        <div class="barrauno">
-                            <div class="barra-tiempo" id="b-tiempo">
-                                <div>&#x23F2;</div>
-                                <div id="timer" class="txt-time">00:00</div>
-                            </div>
-                            <div class="barra-costo">
-                                <div class="barra-llave">
-                                    <div>&#128273;</div>
-                                    <div class="txt-costos" id="desHabilidad"></div>
+                   <div class="barra1 barra-space">
+                        <div class="bloqueo-habilidad fondo" id="lock-1">
+                            <button onclick="unlockGems()" class="btn btn3">Desbloquear</button>
+                            <div style="width: 50%;
+                            text-align: center;  font-family: 'Lilita One'; color: white;"> 1&#128142;</div>
+                        </div> 
+                        <div class="d-non" id="b-1"> 
+                            <div class="barrauno">
+                                <div class="barra-tiempo" id="b-tiempo">
+                                    <div>&#x23F2;</div>
+                                    <div id="timer" class="txt-time">00:00</div>
+                                </div>
+                                <div class="barra-costo">
+                                    <div class="barra-llave">
+                                        <div>&#128273;</div>
+                                        <div class="txt-costos" id="desHabilidad"></div>
+                                    </div>
                                 </div>
                             </div>
+                            <div id="myProgress">
+                                <div id="myBar"></div>
+                            </div>
+                            <!-- <button class="btn-p1" onclick="habilidadUno();" id="farm">Activar</button> -->
+                            <div class="action-btn">
+                                <button class="btn btn3" onclick="powerA()" id="farm">ACTIVAR</button>
+                                <button class="btn btn2" onclick="levelupUno();" id="mejora1">
+                                    <div class="barra-candado">
+                                        <div>&#128274;</div>
+                                        <div class="txt-costos" id="candado">0</div>
+                                    </div>
+                                </button>
+                            </div>
                         </div>
-                        <div id="myProgress">
-                            <div id="myBar"></div>
-                        </div>
-                        <!-- <button class="btn-p1" onclick="habilidadUno();" id="farm">Activar</button> -->
-                        <div class="action-btn">
-                            <button class="btn btn3" onclick="powerA()" id="farm">ACTIVAR</button>
-                            <button class="btn btn2" onclick="levelupUno();" id="mejora1">
-                                <div class="barra-candado">
-                                    <div>&#128274;</div>
-                                    <div class="txt-costos" id="candado">0</div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
+                   </div>
                     <div class="barra2 barra-space">
                         <div class="barrados">
                             <p id="timer2" class="txt-time">00:00</p>
@@ -190,7 +201,6 @@
 
 
     </div>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
     <script src="js/clicker.js"></script>
@@ -198,6 +208,9 @@
     <script src="js/menu.js"></script>
     <script src="js/swiper.min.js"></script>
     <script src="js/habilidades.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notiflix/dist/notiflix-aio-1.5.0.min.js"></script>
+    <script src="js/noti.js"></script>
+    <script src="js/variables.js"></script>
     <script>
         var swiper = new Swiper('.swiper-container');
         // var swiper = new Swiper('.swiper-container', {

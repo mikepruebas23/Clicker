@@ -126,7 +126,15 @@ function activarCancion() {
     }
   }
 }
+function ggbuton(){
 
+  const option = {
+    animation: true,
+    delay: 5000
+  }
+  $('.toast').toast(option)
+  $('#alerta').toast('show')
+}
 
 function levelupUno() {
 
@@ -208,8 +216,16 @@ function mejorarHabilidad1(){
 
 }
 
-function observador(){
-  console.log('si');
+function unlockGems(){
+  if(gemas == 3){
+    var barra_uno = document.getElementById("b-1");
+    barra_uno.classList.add("d-block");
+    var lock_uno = document.getElementById("lock-1");
+    lock_uno.classList.add("d-non");
+  }
+  else {
+    console.log('No', gemas);
+  }
 }
 
 // function programarAviso(){

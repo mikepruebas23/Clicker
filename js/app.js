@@ -70,6 +70,8 @@ function producir() {
 function render() {
     document.getElementById("contador").innerHTML = dinero;
     document.getElementById("contadorDos").innerHTML = dinero;
+    document.getElementById("contador-gemas").innerHTML = gemas;
+
     // document.getElementById("plays").innerHTML = 'Reproducciones: ' + reproducciones;
     // document.getElementById("inventario").innerHTML =
     //     `<div>Cursores: ${inventario[0]}</div>
@@ -89,9 +91,10 @@ setInterval(function() {
 
 // Mostrar SnackBar
 function mostrarNoDinero() {
-    var x = document.getElementById("NoDinero1");
-    x.className = "show";
-    setTimeout(function() { x.className = x.className.replace("show", ""); }, 3000);
+    // var x = document.getElementById("NoDinero1");
+    // x.className = "show";
+    // setTimeout(function() { x.className = x.className.replace("show", ""); }, 3000);
+    ggcrack();
 }
 
 function crearCirculo(objeto) {
