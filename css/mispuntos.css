@@ -1,0 +1,24 @@
+/*perfil para update de datos*/
+.bg-g{
+    background: white;
+}
+.perfil-puntos{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    font-family: 'Lilita One';
+}
+.perfil-puntos > div {
+    display: flex;
+    margin: 5px;
+}
+
+
+.w-50{
+    width: 50%;
+    /* text-align: center; */
+    /* padding: 5px; */
+    margin: 5px;
+    background: #eee;
+}

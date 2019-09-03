@@ -1,7 +1,19 @@
-
-
 .btn-disabled{
     background: #002c5a !important;
     border-bottom: 3px solid #002c5a !important;
     border-top: 3px solid #002c5a !important;
+}
+
+.btn4 {
+    font-family: 'Lilita One';
+    width: 25%;
+    font-size: 18px;
+    color: white;
+    border-radius: 0.25rem;
+    background: #EA2027;
+    box-shadow: 0 0 0 1px #000;
+    border-bottom: 3px solid #690c0f;
+    border-top: 3px solid #ffc0c3;
+    border-radius: 3px;
+    text-shadow: 1px 1px #000, -1px 1px #000, 1px -1px #000, -1px -1px #000, 1px 1px 5px #555;
 }

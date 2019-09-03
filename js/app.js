@@ -1,4 +1,14 @@
-var dinero = 0;
+
+
+document.getElementById("contador").innerHTML = localStorage.getItem('midinero');
+document.getElementById("contadorDos").innerHTML = localStorage.getItem('midinero');
+var midinero = localStorage.getItem('midinero');
+localStorage.setItem('midinero', midinero);
+// for(var i=0, t=localStorage.length; i < t; i++) {
+//     key = localStorage.key(i);
+//     console.log('Para la clave ' + key + ' el valor es: ' + localStorage[key]);
+//     // localStorage.removeItem('Midinero');
+// }
 
 //arreglo,cursos,abuelitas,galelta tenemos
 var inventario = [0, 0, 0];
@@ -11,8 +21,13 @@ var precioProducto = [10, 200, 400];
 
 //funcion click incrementar dinero
 function clic() {
-    dinero++;
+    // dinero++;
+    
+    midinero++;
+    localStorage.setItem('midinero', midinero);
+    render();
 }
+
 
 //funcion para comprar cosas
 function comprar(objeto) {
@@ -67,10 +82,27 @@ function producir() {
     }
 }
 //actualizar el numero de dinero que hay
+
 function render() {
-    document.getElementById("contador").innerHTML = dinero;
-    document.getElementById("contadorDos").innerHTML = dinero;
-    document.getElementById("contador-gemas").innerHTML = gemas;
+
+    document.getElementById("contador").innerHTML = localStorage.getItem('midinero');
+    document.getElementById("contadorDos").innerHTML = localStorage.getItem('midinero');
+
+    // if(localStorage.getItem('dineroGuardado') != null){
+
+    //     dineroGuardado = localStorage.getItem('dineroGuardado');
+    //     document.getElementById("contador").innerHTML = dineroGuardado;
+    // }else{
+    // console.log('no');
+    // }
+    //guardar en localstorage
+    //   localStorage.setItem("dineroGuardado", dinero);
+    //   dineroGuardado = localStorage.getItem("dineroGuardado");
+    //   dinero = dineroGuardado;
+
+    // document.getElementById("contador").innerHTML = dinero;
+    // document.getElementById("contadorDos").innerHTML = dinero;
+    // document.getElementById("contador-gemas").innerHTML = gemas;
 
     // document.getElementById("plays").innerHTML = 'Reproducciones: ' + reproducciones;
     // document.getElementById("inventario").innerHTML =
@@ -81,23 +113,52 @@ function render() {
 }
 //frames para mostrar el aumento del contador
 var FPS = 1;
+// for(var i=0, t=localStorage.length; i < t; i++) {
+//     key = localStorage.key(i);
+//     console.log('Para la clave ' + key + ' el valor es: ' + localStorage[key]);
+//     // localStorage.removeItem('midinero');
+// }
 
-setInterval(function() {
-    //se clickea automaticamente
-    producir();
-    //actualice la cantidad de dinero que hay en el momento
-    render();
-}, 1000 / FPS);
+/*funciona, render dinero*/
 
-// Mostrar SnackBar
+// setInterval(function() {
+//     //se clickea automaticamente
+//     producir();
+//     //actualice la cantidad de dinero que hay en el momento
+//     render();
+// }, 1000 / FPS);
+
+
 function mostrarNoDinero() {
+
+
     // var x = document.getElementById("NoDinero1");
     // x.className = "show";
     // setTimeout(function() { x.className = x.className.replace("show", ""); }, 3000);
-    ggcrack();
+    // ggcrack();
+    Toastify({
+        text: "Dinero insuficiente",
+        gravity: "bottom",
+        position: 'left',
+        close: true,
+        backgroundColor: '#EA2027',
+    }).showToast();
+
 }
 
 function crearCirculo(objeto) {
     var circulos = document.getElementById("circulo");
     circulos.classList.add("show");
+}
+
+//cerrar sesion
+function endSesion()
+{
+    firebase.auth().signOut().then(function()
+    {
+       location.assign('../login.html');
+   }, function(error)
+   {
+      alert("Error al intentar desconectarse.");
+  });
 }

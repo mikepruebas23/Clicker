@@ -12,6 +12,7 @@
 @import url('pagination.css');
 @import url('buttons.css');
 @import url('bloqueadores.css');
+@import url('mispuntos.css');
 
 * {
     margin: 0;
@@ -24,7 +25,7 @@
         font-family: 'Lilita One';
         display: flex;
         flex-direction: column;
-        margin: 22.5% 2% 5%;
+        margin: 3% 2% 5%;
         background: white;
         box-shadow: rgba(255, 255, 255, 1) 0px 1px 0px inset,
             rgba(0, 0, 0, 0.3) 0px 2px 1px;

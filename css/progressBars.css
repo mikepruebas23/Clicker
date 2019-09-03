@@ -1,7 +1,7 @@
 .barras {
     display: flex;
     flex-direction: column;
-    margin-top: 20%;
+    margin-top: 14%;
     background: #eee;
 }
 
@@ -94,6 +94,9 @@
 
 .action-btn {
     display: flex;
+}
+.action-btn > button{
+    width: 50%;
 }
 
 #myProgress {

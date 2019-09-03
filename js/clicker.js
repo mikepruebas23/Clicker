@@ -33,6 +33,7 @@ $(document).ready(function() {
         }
 
         var datosUsuario = data.val();
+        
         //record = datosUsuario.score;
         //console.log("DATOOOOOS: " + datosUsuario);
         //console.log("DATOSSSS" + datosUsuario.initials, datosUsuario.score);
@@ -45,42 +46,39 @@ $(document).ready(function() {
         //       console.log("The " + data.key[0] + " score is " + data.val());
         //     });
         //   });
+        var mmidinero = []
         for (var i = 0; i < keys.length; i++) {
 
             var k = keys[i];
             NombreCompletoUsuario = datosUsuario[k].nombreUsuarioLogeado;
             CorreoCompetoUsuario = datosUsuario[k].correoUsuario;
             PuntosCompletosUsuario = datosUsuario[k].puntos;
+      
             RangoCompletoUsuario = datosUsuario[k].rangoUsuario;
-//console.log('PUNTOS',PuntosCompletosUsuario);
-
-
-
-//points.sort(function(a, b){return b-a});
-
-    //         numeromayor = sueldos[0]
-
-    //         for( i=0; i<sueldos.length && i<nombres.length; i++){
-    // //         
-    //             if(sueldos[i]>numeromayor){ 
-    //                 numeromayor = sueldos[i];
-    //                 System.out.println(numeromayor);
-    //             }
-    //         }
-        
-    
-
+ 
+            mmidinero.push(PuntosCompletosUsuario);
 
             //pintar los elementos
             var DivNombre = document.createElement("div");
             DivNombre.innerHTML=NombreCompletoUsuario;
-            var DivPuntos = document.createElement("div");
-            DivPuntos.innerHTML=PuntosCompletosUsuario;
+
+            // var DivPuntos = document.createElement("div");
+            // DivPuntos.innerHTML=PuntosCompletosUsuario;
+
             var TNombres = document.getElementById('tablaNombres');
             var TPuntos = document.getElementById('tablaPuntos');
             TNombres.appendChild(DivNombre);
-            TPuntos.appendChild(DivPuntos);
+            // TPuntos.appendChild(DivPuntos);
         }
+       mmidinero =  mmidinero.sort((a,b)=>b-a);
+        for(var j = 0; j < mmidinero.length; j++){
+            console.log(mmidinero[j]);
+            
+            var DivPuntos = document.createElement("div");
+            DivPuntos.innerHTML=mmidinero[j];
+            var TPuntos = document.getElementById('tablaPuntos');
+            TPuntos.appendChild(DivPuntos);
+        } 
 //         var points = [PuntosCompletosUsuario];
 // console.log('arregloe points',points)
     }
@@ -147,28 +145,32 @@ $(document).ready(function() {
 
     //botonRegistrar puntos
     $('#btn-incremento').click(function() {
-        console.log(nombreUsuario);
-        console.log(emailUsuario);
-        console.log(usuarioID);
-
-
-
+        // console.log(nombreUsuario);
+        // console.log(emailUsuario);
+        // console.log(usuarioID);
         var refPuntuaciones = database.ref("puntuaciones");
-        console.log(refPuntuaciones);
-
+        // console.log(refPuntuaciones);
+        var veinte = 22;
         refPuntuaciones.child(usuarioID).set({
             nombreUsuarioLogeado: nombreUsuario,
             correoUsuario: emailUsuario,
-            puntos: dinero,
+            // puntos: midinero,
+            puntos: veinte,
             rangoUsuario: rango
 
-
         }, function() {
-            alert('El alta se ha realizado correctamente');
-            location.reload();
+            
+            Toastify({
+                text: "Datos dados de alta",
+                gravity: "bottom",
+                position: 'left',
+                close: true,
+                backgroundColor: '#2ed573',
+              }).showToast();
+            setTimeout(() => {
+                location.reload();
+            }, 2000);
         });
-
-
     });
 
 

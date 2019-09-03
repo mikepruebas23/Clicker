@@ -11,22 +11,25 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/swipe.min.css">
     <link rel="stylesheet" href="css/noti.css">
+    <link rel="stylesheet" type="text/css" href="toastify-js-master/src/toastify.css">
 </head>
 
 <body>
     <header>
-        <div class="contenedor">
-            <h1></h1>
+        <div class="contenedor" style="display: flex;
+        justify-content: center;
+        align-items: center;">
             <input type="checkbox" id="menu-bar">
-            <label class="icon-menu" for="menu-bar"></label>
+            <label class="icon-menu" style="width: 67%;" for="menu-bar"></label>
             <nav class="menu">
                 <a href="index.html">Inicio</a>
-                <a href="compras.html">Compras</a>
-                <a href="nuevoproducto.html">NuevoProducto</a>
+                <!-- <a href="compras.html">Compras</a> -->
+                <!-- <a href="nuevoproducto.html">NuevoProducto</a> -->
                 <a href="perfil.html">Perfil</a>
-                <a href="localStorage.html">local</a>
+                <!-- <a href="localStorage.html">local</a> -->
                 <a href="">Contacto</a>
             </nav>
+            <button class="btn4" onclick="endSesion();">SALIR</button>
         </div>
     </header>
     <!-- Swiper -->
@@ -69,7 +72,7 @@
                     <img src="img/sa.jpg" class="imagen" onclick="clic();">
                     <div id="circulo" class="circulo"></div>
                 </div>
-                
+
 
                 <div class="section-buttons barra-space">
                     <a onclick="comprar(0);" class="btn btn1" id="mcdinero">click</a>
@@ -78,7 +81,7 @@
                     <a class="btn btn1">PROXIMAMENTE</a>
                 </div>
 
-                <div class="compras">
+                <!-- <div class="compras">
                     <div id="inventario" class="inventario">
                         <div class="icon-bar">
                             <a class="active" href="#"><i class="fa fa-home"></i></a>
@@ -89,19 +92,20 @@
                         </div>
                     </div>
                     <p id="NoDinero1">DINERO INSUFICIENTE<img src="img/dinero.svg" class="img-money" alt="Dinero"></p>
-                </div>
+                </div> -->
 
             </div>
             <div class="swiper-slide" style="background:#eee;" id="slide2">
                 <h1></h1>
                 <div class="barras">
-                   <div class="barra1 barra-space">
+                    <div class="barra1 barra-space">
                         <div class="bloqueo-habilidad fondo" id="lock-1">
-                            <button onclick="unlockGems()" class="btn btn3">Desbloquear</button>
+                            <button onclick="unlockGems()" class="btn btn3"
+                                style="box-shadow: 0 0 0 1px #000;">Desbloquear</button>
                             <div style="width: 50%;
                             text-align: center;  font-family: 'Lilita One'; color: white;"> 1&#128142;</div>
-                        </div> 
-                        <div class="d-non" id="b-1"> 
+                        </div>
+                        <div class="d-non" id="b-1">
                             <div class="barrauno">
                                 <div class="barra-tiempo" id="b-tiempo">
                                     <div>&#x23F2;</div>
@@ -128,7 +132,7 @@
                                 </button>
                             </div>
                         </div>
-                   </div>
+                    </div>
                     <div class="barra2 barra-space">
                         <div class="barrados">
                             <p id="timer2" class="txt-time">00:00</p>
@@ -159,42 +163,36 @@
                 <button onclick="activarCancion();" id="farm3">Activar</button>
                 <button onclick="grabarCancion();" id="mejora3">Mejorar 3</button>
             </div>
-            <div class="swiper-slide">
-
-                <h5 id="nombreUsuario"></h5>
-                <p id="correoUsuario"><i class="fa fa-map-marker" aria-hidden="true"></i></p>
-                <div id="contadorDos">0</div>
-                <p>
-                    <ol id="scorelist">
-                    </ol>
-                </p>
-                <button id="btn-incremento">Submit</button>
-            </div>
-            <div class="swiper-slide">
-                <div id="nom"></div>
-                <div id="nom2"></div>
-                <p>
-                    <ol id="scoreBoard">
-                    </ol>
-                </p>
-
-                <div class="wrapper">
-                    <div class="wrapper__header">
-                        <div class="b_logo"><img
-                                src="https://images.vexels.com/media/users/3/135313/isolated/lists/9c44517fa04da541c35888362bce2d1b-award-trophy-icon.png"
-                                width="40" alt="" /></div>
-                        <div class="b_caption">
-                            <p>clicker <span>Tabla de puntuaciones</span></p>
-                        </div>
+            <div class="swiper-slide" style="background:#eee;">
+                <div class="perfil-puntos">
+                    <div class="bg-g">
+                        <div class="w-50">Nombre de usuario:</div>
+                        <div class="w-50" id="nombreUsuario"></div>
                     </div>
-                    <div class="wrapper__content tablaPuntuaciones">
+                   <div class="bg-g">
+                       <div class="w-50">Mi correo:</div>
+                        <div class="w-50" id="correoUsuario"></div>
+                   </div>
+                    <div class="bg-g">
+                        <div class="w-50">Mis puntos:</div>
+                        <div class="w-50" id="contadorDos">0</div>
+                    </div>
+                    <button class="btn btn1" style="margin: 0 auto;" id="btn-incremento">GUARDAR</button>
+                </div>
+            </div>
+            <div class="swiper-slide" style="background: #eee;">
+                <div class="leaderBoard">
+                    <div class="lb-titulo lb-header">
+                        <div style="margin-right: 5px;">Ranking</div>
+                        <div>&#127942</div>
+                    </div>
+                    <div id="scoreBoard"></div>
+                    <div class="lb-datos">
                         <div id="tablaNombres"></div>
                         <div id="tablaPuntos"></div>
                     </div>
-                </div>
+                </div> 
             </div>
-
-
         </div>
         <!-- Add Pagination -->
         <!-- <div class="swiper-pagination"></div> -->
@@ -203,14 +201,13 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+    <script src="js/variables.js"></script>
     <script src="js/clicker.js"></script>
     <script src="js/app.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/swiper.min.js"></script>
     <script src="js/habilidades.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/notiflix/dist/notiflix-aio-1.5.0.min.js"></script>
-    <script src="js/noti.js"></script>
-    <script src="js/variables.js"></script>
+    <script src="toastify-js-master/src/toastify.js"></script>
     <script>
         var swiper = new Swiper('.swiper-container');
         // var swiper = new Swiper('.swiper-container', {
