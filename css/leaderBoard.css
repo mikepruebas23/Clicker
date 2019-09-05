@@ -25,8 +25,44 @@
     flex-direction: row;
     justify-content: center;
     background: white;
+    
 }
-.lb-datos > div {
+.lb-medallas{
+    width: 20%;
+    margin: 0 auto;
+    text-align: center;
+    background: white;
+}
+.lb-medallas > div{
+    margin: 5px;
+    color: white;
+    background: #009432;
+}
+#tablaNombres > div{
+    margin: 5px;
+    color: white;
+    background: #0062cc;
+    font-size: 16px;
+}
+#tablaPuntos > div{
+    margin: 5px;
+    color: white;
+    background: #F44336;
+    font-family: 'Lilita One';
+}
+.lb-tablaNP{
+    display: flex;
+    width: 80%;
+}
+.lb-tablaNP > div:first-child{
+    width: 70%;
+    text-align: center;
+}
+.lb-tablaNP > div:last-child{
+    width: 30%;
+    text-align: center;
+}
+/* .lb-datos > div {
     width: 50%;
     background: white;
 }
@@ -35,4 +71,8 @@
     margin: 5px;
     text-align: center;
 
+} */
+img.imagen:active{
+        transform: translateY(15px);
+      
 }

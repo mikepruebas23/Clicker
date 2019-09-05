@@ -1,4 +1,62 @@
+// Inicializar la base de datos
+// var config2 = {
+//     apiKey: "AIzaSyDy60mMMiFgtrIizIqmDzd8R4dJ7Sgzxg8",
+//     authDomain: "clicker-mikerm24.firebaseapp.com",
+//     databaseURL: "https://clicker-mikerm24.firebaseio.com",
+//     projectId: "clicker-mikerm24",
+//     storageBucket: "clicker-mikerm24.appspot.com",
+//     messagingSenderId: "483328941100"
+// };
+// firebase.initializeApp(config2);
+// var database2 = firebase.database();
+ //id usuario
+ console.log('id_user',ID_USER);
+ var points;
 
+//  var refPuntos = database2.ref('puntuaciones');
+//  refPuntos.on('value', goData);
+
+//traer los datos
+function goData(data) {
+
+    // var scoreBoard = document.getElementById('scoreBoard');
+    // for (var i = 0; i < scoreBoard.length; i++) {
+    //     scoreBoard[i].remove();
+    // }
+
+    var datosUsuario = data.val();
+    // console.log('datosUsuarios', datosUsuario);
+
+    //funciona↓
+    var keys = Object.keys(datosUsuario);
+    // console.log(keys);
+    points = datosUsuario[ID_USER].puntos;
+    console.log(points)
+  
+    for (var i = 0; i < keys.length; i++) {
+        
+        var k = keys[i];
+        
+        NombreCompletoUsuario = datosUsuario[k].nombreUsuarioLogeado;
+        CorreoCompetoUsuario = datosUsuario[k].correoUsuario;
+        PuntosCompletosUsuario = datosUsuario[k].puntos;
+  
+        RangoCompletoUsuario = datosUsuario[k].rangoUsuario;
+
+        //pintar los elementos
+        var DivNombre = document.createElement("div");
+        DivNombre.innerHTML=NombreCompletoUsuario;
+
+       
+
+        var TNombres = document.getElementById('tablaNombres');
+        var TPuntos = document.getElementById('tablaPuntos');
+        TNombres.appendChild(DivNombre);
+        // TPuntos.appendChild(DivPuntos);
+    }
+
+}
+// console.log(points);
 
 document.getElementById("contador").innerHTML = localStorage.getItem('midinero');
 document.getElementById("contadorDos").innerHTML = localStorage.getItem('midinero');

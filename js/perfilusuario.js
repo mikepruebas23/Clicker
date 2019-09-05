@@ -17,11 +17,13 @@ $(document).ready(function() {
 
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
+      // console.log(user);
       name = user.displayName;
       email = user.email;
       photoUrl = user.photoURL;
       emailVerified = user.emailVerified;
       uid = user.uid;
+      // console.log('ID USER:',uid);
       document.getElementById('correoUsuario').innerHTML = email;
       document.getElementById('nombreUsuario').innerHTML = name;
       // console.log(email);

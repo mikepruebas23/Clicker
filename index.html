@@ -70,15 +70,14 @@
                 </div>
                 <div class="foto-clicker">
                     <img src="img/sa.jpg" class="imagen" onclick="clic();">
-                    <div id="circulo" class="circulo"></div>
                 </div>
 
 
                 <div class="section-buttons barra-space">
                     <a onclick="comprar(0);" class="btn btn1" id="mcdinero">click</a>
-                    <a onclick="comprar(1);" class="btn btn1">compra1 $200</a>
+                    <!-- <a onclick="comprar(1);" class="btn btn1">compra1 $200</a>
                     <a onclick="comprar(2);" class="btn btn1">compra2 $400</a>
-                    <a class="btn btn1">PROXIMAMENTE</a>
+                    <a class="btn btn1">PROXIMAMENTE</a> -->
                 </div>
 
                 <!-- <div class="compras">
@@ -133,7 +132,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="barra2 barra-space">
+                    <!-- <div class="barra2 barra-space">
                         <div class="barrados">
                             <p id="timer2" class="txt-time">00:00</p>
                             <p class="txt-costos">Recursos</p>
@@ -145,14 +144,11 @@
                             <button class="btn btn3" onclick="habilidadDos();" id="farm2">ACTIVAR</button>
                             <button class="btn btn2" onclick="levelupDos();" id="mejora2">MEJORAR</button>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
-                <!-- bloqueador de nivel de pantalla -->
-                <!-- <div class="bloqueador-level" id="block-lvl-1">
-                    <button class="btn btn3">Desbloquear</button>
-                </div> -->
             </div>
-            <div class="swiper-slide">
+            <!--slide reproducciones-->
+            <!-- <div class="swiper-slide">
                 <div>
                     <div id="plays">Reproducciones: 0</div>
                     <button onclick="convertirReproducciones();" id="cobrar">cobrar</button>
@@ -162,7 +158,7 @@
                 </div>
                 <button onclick="activarCancion();" id="farm3">Activar</button>
                 <button onclick="grabarCancion();" id="mejora3">Mejorar 3</button>
-            </div>
+            </div> -->
             <div class="swiper-slide" style="background:#eee;">
                 <div class="perfil-puntos">
                     <div class="bg-g">
@@ -188,8 +184,15 @@
                     </div>
                     <div id="scoreBoard"></div>
                     <div class="lb-datos">
-                        <div id="tablaNombres"></div>
-                        <div id="tablaPuntos"></div>
+                        <div class="lb-medallas">
+                            <div>&#129351;</div>
+                            <div>&#129352;</div>
+                            <div>&#129353;</div>
+                        </div>
+                        <div class="lb-tablaNP">
+                            <div id="tablaNombres"></div>
+                            <div id="tablaPuntos"></div>
+                        </div>
                     </div>
                 </div> 
             </div>
@@ -202,8 +205,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
     <script src="js/variables.js"></script>
-    <script src="js/clicker.js"></script>
-    <script src="js/app.js"></script>
+    <!-- <script src="js/clicker.js"></script> -->
+    <script src="js/index.js"></script>
+    <!-- <script src="js/app.js"></script> -->
     <script src="js/menu.js"></script>
     <script src="js/swiper.min.js"></script>
     <script src="js/habilidades.js"></script>

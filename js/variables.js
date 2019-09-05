@@ -1,5 +1,6 @@
 var gemas = 2;
 var dinero = 0;
+var ID_USER;
 
 // localStorage.setItem("nombredeusuario", "John");
 

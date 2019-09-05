@@ -11,6 +11,10 @@ $(document).ready(function() {
     firebase.initializeApp(config);
     var database = firebase.database();
 
+    //id usuario
+    // var ID_USER;
+    var points;
+
     var articulo;
     var descripcion;
     var precio;
@@ -19,74 +23,73 @@ $(document).ready(function() {
     //datos para el usuario
     var rango = 'Novato';
 
+    //variable dinero global
+    var midinerof;
+
     //scoreBoard
     var refPuntos = database.ref('puntuaciones');
     refPuntos.on('value', goData);
 
    
+    //traer los datos
+//     function goData(data) {
 
-    function goData(data) {
+//         // console.log('ID_USER',ID_USER);
 
-        var scoreBoard = document.getElementById('scoreBoard');
-        for (var i = 0; i < scoreBoard.length; i++) {
-            scoreBoard[i].remove();
-        }
+//         var scoreBoard = document.getElementById('scoreBoard');
+//         for (var i = 0; i < scoreBoard.length; i++) {
+//             scoreBoard[i].remove();
+//         }
 
-        var datosUsuario = data.val();
-        
-        //record = datosUsuario.score;
-        //console.log("DATOOOOOS: " + datosUsuario);
-        //console.log("DATOSSSS" + datosUsuario.initials, datosUsuario.score);
+//         var datosUsuario = data.val();
 
-        var keys = Object.keys(datosUsuario);
-        // console.log(keys);
-
-        // refPuntos.orderByValue().limitToLast(3).on("value", function(snapshot) {
-        //     snapshot.forEach(function(data) {
-        //       console.log("The " + data.key[0] + " score is " + data.val());
-        //     });
-        //   });
-        var mmidinero = []
-        for (var i = 0; i < keys.length; i++) {
-
-            var k = keys[i];
-            NombreCompletoUsuario = datosUsuario[k].nombreUsuarioLogeado;
-            CorreoCompetoUsuario = datosUsuario[k].correoUsuario;
-            PuntosCompletosUsuario = datosUsuario[k].puntos;
+//         //funciona↓
+//         var keys = Object.keys(datosUsuario);
+//         // console.log(datosUsuario[ID_USER].puntos);
+//         points = datosUsuario[ID_USER].puntos;
       
-            RangoCompletoUsuario = datosUsuario[k].rangoUsuario;
- 
-            mmidinero.push(PuntosCompletosUsuario);
-
-            //pintar los elementos
-            var DivNombre = document.createElement("div");
-            DivNombre.innerHTML=NombreCompletoUsuario;
-
-            // var DivPuntos = document.createElement("div");
-            // DivPuntos.innerHTML=PuntosCompletosUsuario;
-
-            var TNombres = document.getElementById('tablaNombres');
-            var TPuntos = document.getElementById('tablaPuntos');
-            TNombres.appendChild(DivNombre);
-            // TPuntos.appendChild(DivPuntos);
-        }
-       mmidinero =  mmidinero.sort((a,b)=>b-a);
-        for(var j = 0; j < mmidinero.length; j++){
-            console.log(mmidinero[j]);
+//         var mmidinero = []
+//         for (var i = 0; i < keys.length; i++) {
             
-            var DivPuntos = document.createElement("div");
-            DivPuntos.innerHTML=mmidinero[j];
-            var TPuntos = document.getElementById('tablaPuntos');
-            TPuntos.appendChild(DivPuntos);
-        } 
-//         var points = [PuntosCompletosUsuario];
-// console.log('arregloe points',points)
-    }
+//             var k = keys[i];
+            
+//             NombreCompletoUsuario = datosUsuario[k].nombreUsuarioLogeado;
+//             CorreoCompetoUsuario = datosUsuario[k].correoUsuario;
+//             PuntosCompletosUsuario = datosUsuario[k].puntos;
+      
+//             RangoCompletoUsuario = datosUsuario[k].rangoUsuario;
+ 
+//             mmidinero.push(PuntosCompletosUsuario);
+
+//             //pintar los elementos
+//             var DivNombre = document.createElement("div");
+//             DivNombre.innerHTML=NombreCompletoUsuario;
+
+//             // var DivPuntos = document.createElement("div");
+//             // DivPuntos.innerHTML=PuntosCompletosUsuario;
+
+//             var TNombres = document.getElementById('tablaNombres');
+//             var TPuntos = document.getElementById('tablaPuntos');
+//             TNombres.appendChild(DivNombre);
+//             // TPuntos.appendChild(DivPuntos);
+//         }
+//        mmidinero =  mmidinero.sort((a,b)=>b-a);
+//         for(var j = 0; j < mmidinero.length; j++){
+//             // console.log(mmidinero[j]);
+            
+//             var DivPuntos = document.createElement("div");
+//             DivPuntos.innerHTML=mmidinero[j];
+//             var TPuntos = document.getElementById('tablaPuntos');
+//             TPuntos.appendChild(DivPuntos);
+//         } 
+// //         var points = [PuntosCompletosUsuario];
+// // console.log('arregloe points',points)
+//     }
 
     // Chequeamos la autenticación antes de acceder al resto de contenido de este fichero.
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-            // console.log(user);
+            console.log(user);
             // console.log('Usuario: ' + user.uid + ' está logueado con ' + user.providerData[0].providerId);
             var logueado = '<li><p class="navbar-text navbar-center">' + user.email + '</p></li>';
             logueado += '<li><button type="button" class="btn btn-warning navbar-btn" id="botonLogout">Salir</button></li>';
@@ -98,6 +101,8 @@ $(document).ready(function() {
             nombreUsuario = user.displayName;
             emailUsuario = user.email;
             usuarioID = user.uid;
+            ID_USER = user.uid;
+            console.log('ID_USER',ID_USER);
 
             document.getElementById('correoUsuario').innerHTML = emailUsuario;
             document.getElementById('nombreUsuario').innerHTML = nombreUsuario;
@@ -147,15 +152,13 @@ $(document).ready(function() {
     $('#btn-incremento').click(function() {
         // console.log(nombreUsuario);
         // console.log(emailUsuario);
-        // console.log(usuarioID);
+        console.log(usuarioID);
         var refPuntuaciones = database.ref("puntuaciones");
         // console.log(refPuntuaciones);
-        var veinte = 22;
         refPuntuaciones.child(usuarioID).set({
             nombreUsuarioLogeado: nombreUsuario,
             correoUsuario: emailUsuario,
-            // puntos: midinero,
-            puntos: veinte,
+            puntos: midinero,
             rangoUsuario: rango
 
         }, function() {
